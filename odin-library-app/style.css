@@ -9,3 +9,17 @@
 html {
     height: 100%;
 }
+
+.display-container {
+    height: 80px;
+    display: grid;
+}
+
+.book-wrapper {
+    height: 90%;
+    width: 12.5%;
+}
+
+.book-wrapper > img {
+    width: 100%;
+}
