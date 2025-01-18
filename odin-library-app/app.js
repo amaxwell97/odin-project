@@ -61,20 +61,6 @@ function displayBooksInLibrary () {
     displayLibrary.join('');
     console.log(displayLibrary);
     displayContainer.innerHTML = displayLibrary;
-    // for (let i = 0; i < library.length; i++) {
-    //     let bookEntry = `<div class="book-wrapper" name="book-${i + 1}">
-    //             <img src="/images/stillness-is-the-key.jpg" alt="">
-    //             <div class="book-details">
-    //                 <p class="title">${library[i].title}</p>
-    //                 <p class="author">${library[i].author}</p>
-    //                 <p class="number-pages">${library[i].numPages}</p>
-    //                 <label for="read-status">Read?</label>
-    //                 <input type="checkbox" name="read-status" id="">
-    //             </div>
-    //         </div>`;
-    //     console.log(bookEntry);
-    //     displayContainer.append(bookEntry);
-    // }
 };
 
 window.addEventListener('load', () => {
