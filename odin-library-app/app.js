@@ -4,16 +4,25 @@ const bookWrapper = document.querySelector('.book-wrapper');
 
 const myLibrary = [
     {
+        img: '/images/stillness-is-the-key.jpg',
+        title: 'Stillness is the Key',
+        author: 'Ryan Holiday',
+        numPages: 198,
+    },
+    {
+        img: '/images/the-obstacle-is-the-way.jpg',
         title: 'The Obstacle is the Way',
         author: 'Ryan Holiday',
         numPages: 162,
     },
     {
+        img: '/images/ego-is-the-enemy.jpg',
         title: 'Ego is the Enemy',
         author: 'Ryan Holiday',
         numPages: 211,
     },
     {
+        img: '/images/think-again.jpg',
         title: 'Think Again',
         author: 'Adam Grant',
         numPages: 324,
@@ -38,14 +47,15 @@ function displayBooksInLibrary () {
     // let library = myLibrary;
     let displayLibrary = myLibrary.map((ev) => {
         return `<div class="book-wrapper" name="book-1">
-                <div class="book-details">
-                    <p class="title">${ev.title}</p>
-                    <p class="author">${ev.author}</p>
-                    <p class="number-pages">${ev.numPages}</p>
-                    <label for="read-status">Read?</label>
-                    <input type="checkbox" name="read-status" id="">
-                </div>
-            </div>`;
+                    <img src="${ev.img}" alt="">
+                    <div class="book-details">
+                        <p class="title">${ev.title}</p>
+                        <p class="author">${ev.author}</p>
+                        <p class="number-pages">${ev.numPages}</p>
+                        <label for="read-status">Read?</label>
+                        <input type="checkbox" name="read-status" id="">
+                    </div>
+                </div>`;
     });
     console.log(displayLibrary);
     displayLibrary.join('');
