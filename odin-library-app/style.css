@@ -29,3 +29,11 @@ html {
     margin-top: 20px;
     width: 80%;
 }
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 0;
+    width: 400px;
+}
