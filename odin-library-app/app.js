@@ -33,35 +33,13 @@ const myLibrary = [
     },
 ];
 
-function Book (title, author, numPages) {
+function Book (title, author, numPages, readStatus) {
     // this.img = img,
     this.title = title;
     this.author = author;
     this.numPages = numPages;
     this.readStatus = readStatus;
 };
-
-
-// Using the form to add a new book to the library
-
-const dialogEl = document.querySelector('#dialogEl');
-const submitBtn = document.querySelector('#submitBtn');
-const bookTitle = document.querySelector('#book-title');
-const bookAuthor = document.querySelector('#book-author');
-const bookPages = document.querySelector('#book-pages');
-const bookRead = document.querySelector('#book-read');
-
-function addBookToLibrary (title, author, numPages, readStatus) {
-    let newBook = new Book(title, author, numPages, readStatus);
-    console.log(newBook);
-    myLibrary.push(newBook);
-};
-
-submitBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log(bookRead.value);
-    addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
-})
 
 
 // Displaying the books in myLibrary on the page
@@ -87,5 +65,35 @@ function displayBooksInLibrary () {
 
 window.addEventListener('load', () => {
     console.log(myLibrary)
+    displayBooksInLibrary();
+})
+
+
+// Using the form to add a new book to the library
+
+const addBookBtn = document.querySelector('#addNewBook');
+const dialogEl = document.querySelector('#dialogEl');
+const submitBtn = document.querySelector('#submitBtn');
+const bookTitle = document.querySelector('#book-title');
+const bookAuthor = document.querySelector('#book-author');
+const bookPages = document.querySelector('#book-pages');
+const bookRead = document.querySelector('#book-read');
+
+addBookBtn.addEventListener('click', () => {
+    dialogEl.showModal();
+})
+
+
+
+function addBookToLibrary (title, author, numPages, readStatus) {
+    let newBook = new Book(title, author, numPages, readStatus);
+    console.log(newBook);
+    myLibrary.push(newBook);
+};
+
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(bookRead.value);
+    addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
     displayBooksInLibrary();
 })
